@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="DELETE">
+        <category display_value="" name="x_1434449_finance_finance_case_task">x_1434449_finance_finance_case_task</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1000</number>
+        <prefix>FCTSK</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-16 00:26:04</sys_created_on>
+        <sys_id>efb3866f47d7c210d07ab979316d432b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FCTSK</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_update_name>sys_number_efb3866f47d7c210d07ab979316d432b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-16 00:26:04</sys_updated_on>
+    </sys_number>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</application>
+        <file_path/>
+        <instance_id>744c8c46db22799ccaf99027c5961964</instance_id>
+        <instance_name>dev215127</instance_name>
+        <name>sys_number_efb3866f47d7c210d07ab979316d432b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number"><sys_number action="INSERT_OR_UPDATE"><category display_value="" name="x_1434449_finance_finance_case_task">x_1434449_finance_finance_case_task</category><maximum_digits>7</maximum_digits><number>1000</number><prefix>FCTSK</prefix><sys_class_name>sys_number</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-07-16 00:26:04</sys_created_on><sys_id>efb3866f47d7c210d07ab979316d432b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>FCTSK</sys_name><sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package><sys_policy/><sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope><sys_update_name>sys_number_efb3866f47d7c210d07ab979316d432b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-07-16 00:26:04</sys_updated_on></sys_number></record_update>]]></payload>
+        <payload_hash>-1119071808</payload_hash>
+        <record_name>FCTSK</record_name>
+        <reverted_from/>
+        <source>d9bdcf8b47934210d07ab979316d439c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-16 00:26:04</sys_created_on>
+        <sys_id>e7b3866f47d7c210d07ab979316d4333</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190b8ee9f860000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-16 00:26:04</sys_updated_on>
+        <type>Number</type>
+        <update_guid>ebb3866f9fd7c2105d72a4d14883ce32</update_guid>
+        <update_guid_history>ebb3866f9fd7c2105d72a4d14883ce32:-1119071808</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-16 00:30:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_number">sys_number</sys_db_object>
+        <sys_id>c48e0e584a484d5189871e688c65c6a1</sys_id>
+        <sys_metadata>efb3866f47d7c210d07ab979316d432b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FCTSK</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_parent display_value="">8e4306ef4757c210d07ab979316d439a</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_scope_delete display_value="">00564d6563d34c9080076023601c5c61</sys_scope_delete>
+        <sys_update_name>sys_number_efb3866f47d7c210d07ab979316d432b</sys_update_name>
+        <sys_update_version display_value="sys_number_efb3866f47d7c210d07ab979316d432b">e7b3866f47d7c210d07ab979316d4333</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-16 00:30:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

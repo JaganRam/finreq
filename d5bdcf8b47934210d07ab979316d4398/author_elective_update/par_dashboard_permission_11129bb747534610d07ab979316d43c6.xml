@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="DELETE">
+        <can_read>true</can_read>
+        <can_share>false</can_share>
+        <can_write>false</can_write>
+        <dashboard display_value="Finance Case Management">98125bb74153461035ab68cae11d1974</dashboard>
+        <group/>
+        <owner>false</owner>
+        <role display_value="x_1434449_finance.finance_request_task_user" name="x_1434449_finance.finance_request_task_user">680506ef47d7c210d07ab979316d4336</role>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-17 00:46:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>11129bb747534610d07ab979316d43c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>98125bb74153461035ab68cae11d1974</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_update_name>par_dashboard_permission_11129bb747534610d07ab979316d43c6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-17 00:46:49</sys_updated_on>
+        <user/>
+    </par_dashboard_permission>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</application>
+        <file_path/>
+        <instance_id>744c8c46db22799ccaf99027c5961964</instance_id>
+        <instance_name>dev215127</instance_name>
+        <name>par_dashboard_permission_11129bb747534610d07ab979316d43c6</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission"><par_dashboard_permission action="INSERT_OR_UPDATE"><can_read>true</can_read><can_share>false</can_share><can_write>false</can_write><dashboard display_value="Finance Case Management">98125bb74153461035ab68cae11d1974</dashboard><group/><owner>false</owner><role display_value="x_1434449_finance.finance_request_task_user" name="x_1434449_finance.finance_request_task_user">680506ef47d7c210d07ab979316d4336</role><sys_class_name>par_dashboard_permission</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-07-17 00:46:49</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>11129bb747534610d07ab979316d43c6</sys_id><sys_mod_count>0</sys_mod_count><sys_name>98125bb74153461035ab68cae11d1974</sys_name><sys_overrides/><sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package><sys_policy/><sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope><sys_update_name>par_dashboard_permission_11129bb747534610d07ab979316d43c6</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-07-17 00:46:49</sys_updated_on><user/></par_dashboard_permission></record_update>]]></payload>
+        <payload_hash>-1602218158</payload_hash>
+        <record_name>98125bb74153461035ab68cae11d1974</record_name>
+        <reverted_from/>
+        <source>d9bdcf8b47934210d07ab979316d439c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-17 00:46:49</sys_created_on>
+        <sys_id>91129bb747534610d07ab979316d43c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190be27fb9a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-17 00:46:49</sys_updated_on>
+        <type>PAR Dashboard Permission</type>
+        <update_guid>95129bb7c4534610adb65a045c9f73c7</update_guid>
+        <update_guid_history>95129bb7c4534610adb65a045c9f73c7:-1602218158</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Finance Case Workspace">cc9b1c6447afc610d07ab979316d431a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-18 19:24:49</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_permission">par_dashboard_permission</sys_db_object>
+        <sys_id>753c8ce2b84f452a888fa8d265f309a4</sys_id>
+        <sys_metadata>11129bb747534610d07ab979316d43c6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>98125bb74153461035ab68cae11d1974</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_scope_delete display_value="">00564d6563d34c9080076023601c5c61</sys_scope_delete>
+        <sys_update_name>par_dashboard_permission_11129bb747534610d07ab979316d43c6</sys_update_name>
+        <sys_update_version display_value="par_dashboard_permission_11129bb747534610d07ab979316d43c6">91129bb747534610d07ab979316d43c8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-18 19:24:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

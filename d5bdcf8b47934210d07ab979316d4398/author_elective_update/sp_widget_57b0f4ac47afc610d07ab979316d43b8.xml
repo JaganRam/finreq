@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>finance_case</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Finance Case</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-18 20:57:20</sys_created_on>
+        <sys_id>57b0f4ac47afc610d07ab979316d43b8</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Finance Case</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_update_name>sp_widget_57b0f4ac47afc610d07ab979316d43b8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-18 21:27:06</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+  <a href="https://dev215127.service-now.com/x_1434449_finance_finance_cases.do?sys_id=-1&sysparm_stack=x_1434449_finance_finance_cases_list.do"></a>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</application>
+        <file_path/>
+        <instance_id>744c8c46db22799ccaf99027c5961964</instance_id>
+        <instance_name>dev215127</instance_name>
+        <name>sp_widget_57b0f4ac47afc610d07ab979316d43b8</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;finance_case&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Finance Case&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-07-18 20:57:20&lt;/sys_created_on&gt;&lt;sys_id&gt;57b0f4ac47afc610d07ab979316d43b8&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;Finance Case&lt;/sys_name&gt;&lt;sys_package display_value="Finance Case Management" source="x_1434449_finance"&gt;d5bdcf8b47934210d07ab979316d4398&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Finance Case Management"&gt;d5bdcf8b47934210d07ab979316d4398&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_57b0f4ac47afc610d07ab979316d43b8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-07-18 21:27:06&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+&lt;!-- your widget template --&gt;
+  &lt;a href="https://dev215127.service-now.com/x_1434449_finance_finance_cases.do?sys_id=-1&amp;sysparm_stack=x_1434449_finance_finance_cases_list.do"&gt;&lt;/a&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>203620052</payload_hash>
+        <record_name>Finance Case</record_name>
+        <reverted_from/>
+        <source>d9bdcf8b47934210d07ab979316d439c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-18 21:27:06</sys_created_on>
+        <sys_id>9387386847230a10d07ab979316d4308</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190c7bdd90d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-18 21:27:06</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>5b873868ab230a1083e032e8bd890b07</update_guid>
+        <update_guid_history>5b873868ab230a1083e032e8bd890b07:203620052,cf37f0e08e230a10108aa2e9d0aa0734:188205791,38713420e9230a105c23d2ea886dc3db:-1766768276,fb3174ec66efc6109e96fc2544c24be3:-1823201010,5fb0bc20ad230a10b633004dd32fc1bc:-1612771108</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Finance Case">d4372678472f4a10d07ab979316d437a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-20 00:13:21</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>091ebd04fbec41809464781b86fb3c31</sys_id>
+        <sys_metadata>57b0f4ac47afc610d07ab979316d43b8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Finance Case</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_scope_delete display_value="">00564d6563d34c9080076023601c5c61</sys_scope_delete>
+        <sys_update_name>sp_widget_57b0f4ac47afc610d07ab979316d43b8</sys_update_name>
+        <sys_update_version display_value="sp_widget_57b0f4ac47afc610d07ab979316d43b8">9387386847230a10d07ab979316d4308</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-20 00:13:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
