@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_entry">
+    <sys_transform_entry action="INSERT_OR_UPDATE">
+        <choice_action>create</choice_action>
+        <coalesce>false</coalesce>
+        <coalesce_case_sensitive>false</coalesce_case_sensitive>
+        <coalesce_empty_fields>false</coalesce_empty_fields>
+        <date_format>yyyy-MM-dd HH:mm:ss</date_format>
+        <map display_value="FinanceImportTM">89f3ed3147278e10d07ab979316d43cc</map>
+        <reference_value_field/>
+        <source_field>u_assigned_to</source_field>
+        <source_script><![CDATA[answer = (function transformEntry(source) {
+
+	// Add your code here
+	return ""; // return the value to be put into the target field
+
+})(source);]]></source_script>
+        <source_table>u_financecasehistory</source_table>
+        <sys_class_name>sys_transform_entry</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-22 21:57:02</sys_created_on>
+        <sys_id>fcc4ed3947678e10d07ab979316d43ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_assigned_to</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_update_name>sys_transform_entry_fcc4ed3947678e10d07ab979316d43ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-22 21:57:02</sys_updated_on>
+        <target_field>assigned_to</target_field>
+        <target_table>x_1434449_finance_finance_cases</target_table>
+        <use_source_script>false</use_source_script>
+    </sys_transform_entry>
+</record_update>
