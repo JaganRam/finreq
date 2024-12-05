@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>other</category>
+        <client_script><![CDATA[function ($scope, spUtil, snRecordWatcher, $rootScope, $sce) {
+	var c = this;
+	$scope.standalone = $scope.options.standalone == 'true' || $scope.options.standalone == true;
+  var q = "cmdb_ci.sys_class_name=cmdb_ci_service";
+  if ($scope.data.outageIDs != "")
+    q += "^NQsys_idIN" + $scope.data.outageIDs;
+	
+	spUtil.recordWatch($scope, "cmdb_ci_outage", q, function() {
+		$scope.server.update();
+		$rootScope.$broadcast("sp.outage.updated");
+	});
+	
+	$scope.trustAsHtml = function(html) {
+		return $sce.trustAsHtml(html);
+	};
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.bs-callout {
+  margin: 10px 0 !important;
+  padding: 20px !important;
+  border-left-style: solid;
+  border-left-width: 10px;
+  color: $gray-dark;
+}
+
+.bs-callout-outage {
+  background-color: lighten($danger, 40%);
+  border-color: $danger;
+}
+
+.bs-callout-degradation {
+  background-color: lighten($warning, 35%);
+  border-color: $warning;
+}
+
+.bs-callout-planned {
+  background-color: lighten($info, 35%);
+  border-color: $info;
+}
+
+.bs-callout-success {
+  background-color: lighten($success, 40%);
+  border-color: $success;
+}
+
+.tooltip-inner {
+    width: 150px;
+}
+
+div.sp-outage-details {
+  margin-bottom: -10px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Copy of Current Status</name>
+        <option_schema>[{"hint":"Display details from the cmdb_ci_outage record","name":"show_outage_details","section":"Presentation","label":"Show outage details","type":"boolean"},{"hint":"Omit explanatory information","name":"standalone","section":"Presentation","label":"Standalone","type":"boolean"},{"hint":"List of sys_class_name values (comma separated)","name":"sys_class_list","section":"Data","default_value":"cmdb_ci_service","label":"Class List","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[// populate the 'data' object
+// e.g., data.table = $sp.getValue('table');
+var outage = new GlideRecord("cmdb_ci_outage");
+outage.addQuery("cmdb_ci.sys_class_name", "IN", options.sys_class_list || "cmdb_ci_service");
+outage.addQuery("begin", "<=", gs.nowNoTZ());
+outage.addQuery("end", ">=", gs.nowNoTZ()).addOrCondition("end", "=", "NULL");
+data.service = (input && input.service) || $sp.getParameter("service");
+if (!GlideStringUtil.nil(data.service)) {
+  outage.addQuery("cmdb_ci", data.service);
+	var serviceGR = new GlideRecord("cmdb_ci_service");
+	if (serviceGR.get(data.service))
+		data.serviceDisplay = serviceGR.getDisplayValue();
+}
+outage.query();
+data.outages = [];
+data.outageIDs = "";
+while (outage.next()) {
+	var out = {};
+	out.typeDisplay = outage.type.getDisplayValue();
+	out.type = outage.getValue("type");
+	out.details = outage.getValue("details");
+	out.ci = outage.cmdb_ci.getDisplayValue();
+	out.serviceID = outage.getValue("cmdb_ci");
+	out.begin = outage.begin.getDisplayValue();
+	data.outages.push(out);
+	data.outageIDs += "," + outage.getUniqueValue();
+}]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-20 00:13:52</sys_created_on>
+        <sys_id>48576a38472f4a10d07ab979316d43a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Current Status</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_update_name>sp_widget_48576a38472f4a10d07ab979316d43a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-20 00:13:52</sys_updated_on>
+        <template><![CDATA[<div ng-if="!data.service || data.outages.length > 0" class="panel panel-{{options.color}} b">
+  <div class="panel-heading">
+    <h3 class="panel-title">${Current Status}<span ng-if="data.serviceDisplay"> - {{data.serviceDisplay}}</span></h3>
+  </div>
+
+  <div class="panel-body">
+    <div ng-if="!standalone && !data.service" class="hidden-xs">${We constantly monitor our services and their related components.} ${If there is ever a service interruption, a notification will be posted to this page.} ${If you are experiencing problems not listed on this page, you can submit a request for service.}</div>
+
+    <div ng-if="data.outages.length == 0" class="col-xs-12 bs-callout bs-callout-success">
+      <div ng-if="!data.service">${No system is reporting an issue}</div>
+    </div>
+    <div ng-if="data.outages.length > 0" ng-repeat="outage in data.outages" class="col-xs-12 bs-callout bs-callout-{{outage.type}}">
+      <a ng-if="!data.service" style="color:inherit" ng-href="?id=service_status&service={{outage.serviceID}}">{{outage.typeDisplay}} - {{outage.ci}} (${started {{outage.begin}}})
+        <div ng-if="options.show_outage_details == 'true' && outage.details" ng-bind-html="::trustAsHtml(outage.details)" class="sp-outage-details"></div>
+      </a>
+      <span ng-if="data.service" style="color:inherit">{{outage.typeDisplay}} - {{outage.ci}} (${started {{outage.begin}}})
+        <div ng-if="options.show_outage_details == 'true' && outage.details" ng-bind-html="::trustAsHtml(outage.details)" class="sp-outage-details"></div>
+      </span>
+    </div>
+    <div ng-if="::standalone"><a href="?id=services_status" aria-label="${More information, open current status page}">${More information...}</a></div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</application>
+        <file_path/>
+        <instance_id>744c8c46db22799ccaf99027c5961964</instance_id>
+        <instance_name>dev215127</instance_name>
+        <name>sp_widget_48576a38472f4a10d07ab979316d43a9</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;other&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($scope, spUtil, snRecordWatcher, $rootScope, $sce) {
+	var c = this;
+	$scope.standalone = $scope.options.standalone == 'true' || $scope.options.standalone == true;
+  var q = "cmdb_ci.sys_class_name=cmdb_ci_service";
+  if ($scope.data.outageIDs != "")
+    q += "^NQsys_idIN" + $scope.data.outageIDs;
+	
+	spUtil.recordWatch($scope, "cmdb_ci_outage", q, function() {
+		$scope.server.update();
+		$rootScope.$broadcast("sp.outage.updated");
+	});
+	
+	$scope.trustAsHtml = function(html) {
+		return $sce.trustAsHtml(html);
+	};
+	
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.bs-callout {
+  margin: 10px 0 !important;
+  padding: 20px !important;
+  border-left-style: solid;
+  border-left-width: 10px;
+  color: $gray-dark;
+}
+
+.bs-callout-outage {
+  background-color: lighten($danger, 40%);
+  border-color: $danger;
+}
+
+.bs-callout-degradation {
+  background-color: lighten($warning, 35%);
+  border-color: $warning;
+}
+
+.bs-callout-planned {
+  background-color: lighten($info, 35%);
+  border-color: $info;
+}
+
+.bs-callout-success {
+  background-color: lighten($success, 40%);
+  border-color: $success;
+}
+
+.tooltip-inner {
+    width: 150px;
+}
+
+div.sp-outage-details {
+  margin-bottom: -10px;
+}
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id/&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Copy of Current Status&lt;/name&gt;&lt;option_schema&gt;[{"hint":"Display details from the cmdb_ci_outage record","name":"show_outage_details","section":"Presentation","label":"Show outage details","type":"boolean"},{"hint":"Omit explanatory information","name":"standalone","section":"Presentation","label":"Standalone","type":"boolean"},{"hint":"List of sys_class_name values (comma separated)","name":"sys_class_list","section":"Data","default_value":"cmdb_ci_service","label":"Class List","type":"string"}]&lt;/option_schema&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[// populate the 'data' object
+// e.g., data.table = $sp.getValue('table');
+var outage = new GlideRecord("cmdb_ci_outage");
+outage.addQuery("cmdb_ci.sys_class_name", "IN", options.sys_class_list || "cmdb_ci_service");
+outage.addQuery("begin", "&lt;=", gs.nowNoTZ());
+outage.addQuery("end", "&gt;=", gs.nowNoTZ()).addOrCondition("end", "=", "NULL");
+data.service = (input &amp;&amp; input.service) || $sp.getParameter("service");
+if (!GlideStringUtil.nil(data.service)) {
+  outage.addQuery("cmdb_ci", data.service);
+	var serviceGR = new GlideRecord("cmdb_ci_service");
+	if (serviceGR.get(data.service))
+		data.serviceDisplay = serviceGR.getDisplayValue();
+}
+outage.query();
+data.outages = [];
+data.outageIDs = "";
+while (outage.next()) {
+	var out = {};
+	out.typeDisplay = outage.type.getDisplayValue();
+	out.type = outage.getValue("type");
+	out.details = outage.getValue("details");
+	out.ci = outage.cmdb_ci.getDisplayValue();
+	out.serviceID = outage.getValue("cmdb_ci");
+	out.begin = outage.begin.getDisplayValue();
+	data.outages.push(out);
+	data.outageIDs += "," + outage.getUniqueValue();
+}]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-07-20 00:13:52&lt;/sys_created_on&gt;&lt;sys_id&gt;48576a38472f4a10d07ab979316d43a9&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Copy of Current Status&lt;/sys_name&gt;&lt;sys_package display_value="Finance Case Management" source="x_1434449_finance"&gt;d5bdcf8b47934210d07ab979316d4398&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Finance Case Management"&gt;d5bdcf8b47934210d07ab979316d4398&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_48576a38472f4a10d07ab979316d43a9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-07-20 00:13:52&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div ng-if="!data.service || data.outages.length &gt; 0" class="panel panel-{{options.color}} b"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;${Current Status}&lt;span ng-if="data.serviceDisplay"&gt; - {{data.serviceDisplay}}&lt;/span&gt;&lt;/h3&gt;
+  &lt;/div&gt;
+
+  &lt;div class="panel-body"&gt;
+    &lt;div ng-if="!standalone &amp;&amp; !data.service" class="hidden-xs"&gt;${We constantly monitor our services and their related components.} ${If there is ever a service interruption, a notification will be posted to this page.} ${If you are experiencing problems not listed on this page, you can submit a request for service.}&lt;/div&gt;
+
+    &lt;div ng-if="data.outages.length == 0" class="col-xs-12 bs-callout bs-callout-success"&gt;
+      &lt;div ng-if="!data.service"&gt;${No system is reporting an issue}&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div ng-if="data.outages.length &gt; 0" ng-repeat="outage in data.outages" class="col-xs-12 bs-callout bs-callout-{{outage.type}}"&gt;
+      &lt;a ng-if="!data.service" style="color:inherit" ng-href="?id=service_status&amp;service={{outage.serviceID}}"&gt;{{outage.typeDisplay}} - {{outage.ci}} (${started {{outage.begin}}})
+        &lt;div ng-if="options.show_outage_details == 'true' &amp;&amp; outage.details" ng-bind-html="::trustAsHtml(outage.details)" class="sp-outage-details"&gt;&lt;/div&gt;
+      &lt;/a&gt;
+      &lt;span ng-if="data.service" style="color:inherit"&gt;{{outage.typeDisplay}} - {{outage.ci}} (${started {{outage.begin}}})
+        &lt;div ng-if="options.show_outage_details == 'true' &amp;&amp; outage.details" ng-bind-html="::trustAsHtml(outage.details)" class="sp-outage-details"&gt;&lt;/div&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div ng-if="::standalone"&gt;&lt;a href="?id=services_status" aria-label="${More information, open current status page}"&gt;${More information...}&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-723150139</payload_hash>
+        <record_name>Copy of Current Status</record_name>
+        <reverted_from/>
+        <source>d9bdcf8b47934210d07ab979316d439c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-20 00:13:52</sys_created_on>
+        <sys_id>04576a38472f4a10d07ab979316d43ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190cd7ce5090000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-20 00:13:52</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>08576a385b2f4a1082ba97ddf22102ab</update_guid>
+        <update_guid_history>08576a385b2f4a1082ba97ddf22102ab:-723150139</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Current Status">0f77e238472f4a10d07ab979316d4389</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-20 00:14:38</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>59efc461c01e499485ea2f26aa758224</sys_id>
+        <sys_metadata>48576a38472f4a10d07ab979316d43a9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Current Status</sys_name>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_scope_delete display_value="">00564d6563d34c9080076023601c5c61</sys_scope_delete>
+        <sys_update_name>sp_widget_48576a38472f4a10d07ab979316d43a9</sys_update_name>
+        <sys_update_version display_value="sp_widget_48576a38472f4a10d07ab979316d43a9">04576a38472f4a10d07ab979316d43ac</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-20 00:14:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

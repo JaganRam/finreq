@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">dbb0bc2047230a10d07ab979316d43c7</sp_column>
+        <sp_widget/>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-18 20:57:20</sys_created_on>
+        <sys_id>9bb0bc2047230a10d07ab979316d43ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_update_name>sp_instance_9bb0bc2047230a10d07ab979316d43ca</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-18 20:57:20</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=9bb0bc2047230a10d07ab979316d43ca"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</application>
+        <file_path/>
+        <instance_id>744c8c46db22799ccaf99027c5961964</instance_id>
+        <instance_name>dev215127</instance_name>
+        <name>sp_instance_9bb0bc2047230a10d07ab979316d43ca</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">dbb0bc2047230a10d07ab979316d43c7</sp_column><sp_widget/><sys_class_name>sp_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-07-18 20:57:20</sys_created_on><sys_id>9bb0bc2047230a10d07ab979316d43ca</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package><sys_policy/><sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope><sys_update_name>sp_instance_9bb0bc2047230a10d07ab979316d43ca</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-07-18 20:57:20</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=9bb0bc2047230a10d07ab979316d43ca"/></record_update>]]></payload>
+        <payload_hash>1352651341</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>d9bdcf8b47934210d07ab979316d439c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-20 00:13:21</sys_created_on>
+        <sys_id>58372678472f4a10d07ab979316d437f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190cd7c69240000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-20 00:13:21</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>5fb0bc202c230a10ddd82663d8a1d9cc</update_guid>
+        <update_guid_history>5fb0bc202c230a10ddd82663d8a1d9cc:1714803100,5fb0bc202c230a10ddd82663d8a1d9cc:1714803100</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">58bb26fc472f4a10d07ab979316d4387</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-20 00:33:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>21c6160c6fda4c91b942ed42bc6737f9</sys_id>
+        <sys_metadata>9bb0bc2047230a10d07ab979316d43ca</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+        <sys_scope_delete display_value="">00564d6563d34c9080076023601c5c61</sys_scope_delete>
+        <sys_update_name>sp_instance_9bb0bc2047230a10d07ab979316d43ca</sys_update_name>
+        <sys_update_version display_value="sp_instance_9bb0bc2047230a10d07ab979316d43ca">58372678472f4a10d07ab979316d437f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-20 00:33:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

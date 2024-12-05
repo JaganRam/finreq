@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Finance Case Request" language="en" table="x_1434449_finance_finance_cases">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Finance Case Request</label>
+            <language>en</language>
+            <name>x_1434449_finance_finance_cases</name>
+            <plural>Finance Case Requests</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-14 16:36:15</sys_created_on>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Finance Case Request</sys_name>
+            <sys_package display_value="Finance Case Management" source="x_1434449_finance">d5bdcf8b47934210d07ab979316d4398</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Finance Case Management">d5bdcf8b47934210d07ab979316d4398</sys_scope>
+            <sys_update_name>sys_documentation_x_1434449_finance_finance_cases__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-16 00:30:47</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
